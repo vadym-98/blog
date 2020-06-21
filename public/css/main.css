@@ -1,0 +1,117 @@
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+}
+
+.form {
+    height: 100%;
+}
+
+label {
+    margin-bottom: 0 !important;
+}
+
+.error {
+    color: red;
+}
+
+.header {
+    background: #0f6674;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.links a {
+    color: black;
+}
+
+.links a:hover {
+    color: #ffeeba;
+}
+
+.posts {
+    padding-top: 20px;
+}
+
+.image {
+    width: 100px;
+}
+
+.title {
+    margin-left: 50px;
+}
+
+.footer {
+    padding-top: 15px;
+    background: #0f6674;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+}
+
+.big-image {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.position-bottom {
+    height: 100px;
+}
+
+.post-title {
+    text-align: center;
+}
+
+.active {
+    background: #ffe924;
+    border-radius: 15px;
+}
+
+.active:hover {
+    border-radius: 20px;
+    color: #000000 !important;
+}
+
+.tag {
+    border: none;
+    background: none;
+    margin-left: 10px;
+    color: blue;
+}
+
+.btn-submit {
+    background: #ffe924;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.content {
+    height: 100px !important;
+}
+
+select.form-control[multiple], select.form-control[size] {
+    height: 50px !important;
+}
+
+.comment-btn {
+    margin-left: 10px;
+}
+
+.comment {
+    border: 1px solid rgba(139, 139, 139, 0.24);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.small-text {
+    font-size: 12px;
+}
