@@ -11,9 +11,10 @@ class Post extends Model
 
     public function all()
     {
-        return $this->db->row("SELECT posts.*, GROUP_CONCAT(tags.name) as tags FROM posts
-                  LEFT JOIN post_tag ON post_tag.post_id = posts.id
-                  LEFT JOIN tags ON tags.id = post_tag.tag_id GROUP BY posts.id");
+        return $this->db->row("select * from(SELECT posts.*, GROUP_CONCAT(tags.name) as tags FROM posts
+                     LEFT JOIN post_tag ON post_tag.post_id = posts.id
+                     LEFT JOIN tags ON tags.id = post_tag.tag_id
+                     GROUP BY posts.id) as result order by created desc;");
     }
 
     public function getPost($post_id)
