@@ -46,7 +46,8 @@ class Post extends Model
 
     public function editPost(array $post)
     {
-        $this->db->query("UPDATE posts SET title = :title, content = :content, `status` = :status", [
+        $this->db->query("UPDATE posts SET title = :title, content = :content, `status` = :status where id = :id", [
+            'id' => $post['id'],
             'title' => $post['title'],
             'content' => $post['content'],
             'status' => $post['status'],
@@ -75,5 +76,25 @@ class Post extends Model
         $this->db->query("DELETE FROM posts WHERE id = :id", [
             'id' => $post_id
         ]);
+    }
+
+    public function readPosts()
+    {
+        $posts = $this->db->row("select * from posts where read_at is NULL");
+        foreach ($posts as $post) {
+            $this->db->query("update posts set read_at = current_timestamp where id = :id", [
+                'id' => $post['id']
+            ]);
+        }
+    }
+
+    public function changeStatus()
+    {
+        $posts = $this->db->row("select * from posts where read_at is not null and status = 'new'");
+        foreach ($posts as $post) {
+            $this->db->query("update posts set status = 'open' where id = :id", [
+                'id' => $post['id']
+            ]);
+        }
     }
 }

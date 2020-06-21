@@ -5,6 +5,7 @@ create table if not exists `posts` (
                                        `status` enum('new', 'open', 'closed'),
                                        `image` varchar(255) not null,
                                        `user_id` int(11) unsigned not null,
+                                       `read_at` timestamp null,
                                        `created` timestamp default current_timestamp,
                                        primary key (id),
                                        foreign key (user_id) references users(id) on delete cascade

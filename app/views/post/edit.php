@@ -1,6 +1,6 @@
 <div class="jumbotron my-4 col-5 mx-auto py-4">
     <h4 class="offset-4">Edit Post</h4>
-    <form action="/post/update" method="post" id="userForm" enctype="multipart/form-data">
+    <form action="/post/update/<?= $post[0]['id'] ?>" method="post" id="userForm" enctype="multipart/form-data">
         <div class="form-group row align-items-center">
             <label for="title" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-9 offset-1">

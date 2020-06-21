@@ -14,7 +14,9 @@ class PostController extends Controller
     public function indexAction()
     {
         if (!isset($_SESSION['user'])) $this->view->redirect('/login');
+        $this->model->changeStatus();
         $posts = $this->model->all();
+        $this->model->readPosts();
         $this->view->render('Blog', [
             'posts' => $posts
         ]);

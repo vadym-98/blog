@@ -13,7 +13,7 @@ return [
         "controller" => "post",
         "action" => "edit"
     ],
-    "post/update" => [
+    "post/update/{post:\d+}" => [
         "controller" => "post",
         "action" => "update"
     ],
